@@ -18,6 +18,6 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private JTextField username;
-    private JPasswordField password;
+    private String username;
+    private String userpassword;
 }

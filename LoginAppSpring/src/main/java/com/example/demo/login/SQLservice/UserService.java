@@ -12,15 +12,25 @@ public class UserService implements IUserservice {
 @Autowired
 private UserRepository userRepository;
 
+
+//    public List<User> findUserByNamePassword(){
+//        return UserRepository.findUserByNamePassword(User);
+//    }
+
     @Override
     public List<User> listarUsers() {
-        List<User> users = userRepository.findAll();
-        return users;
+        return userRepository.findAll();
     }
 
     @Override
-    public void validarUser(User user) {
+    public List<User> validarUser(User user) {
+        return userRepository.findUserByUsernameAndUserpassword(user.getUsername(), user.getUserpassword());
     }
+
+//    @Override
+//    public boolean validarUser(User user) {
+//
+//    }
 
     @Override
     public void crearUser(User user) {
