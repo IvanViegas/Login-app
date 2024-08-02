@@ -8,4 +8,6 @@ public interface IUserservice {
     public List<User> validarUser(User user);
 
     public void crearUser(User user);
+
+    void eliminarUser(User user);
 }

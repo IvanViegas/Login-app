@@ -13,10 +13,6 @@ public class UserService implements IUserservice {
 private UserRepository userRepository;
 
 
-//    public List<User> findUserByNamePassword(){
-//        return UserRepository.findUserByNamePassword(User);
-//    }
-
     @Override
     public List<User> listarUsers() {
         return userRepository.findAll();
@@ -27,13 +23,14 @@ private UserRepository userRepository;
         return userRepository.findUserByUsernameAndUserpassword(user.getUsername(), user.getUserpassword());
     }
 
-//    @Override
-//    public boolean validarUser(User user) {
-//
-//    }
 
     @Override
     public void crearUser(User user) {
+        userRepository.save(user);
+    }
 
+    @Override
+    public void eliminarUser (User user){
+        userRepository.delete(user);
     }
 }
