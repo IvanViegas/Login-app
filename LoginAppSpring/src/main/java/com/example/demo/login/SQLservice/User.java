@@ -17,7 +17,7 @@ import javax.swing.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idusuarios;
     private String username;
     private String userpassword;
 }
