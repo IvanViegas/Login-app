@@ -62,6 +62,7 @@ public class LoginApplication implements CommandLineRunner {
 								case 1: {
 									var usuarios = userService.listarUsers();
 									usuarios.forEach(System.out::println);
+									break;
 								}
 
 								case 2: {
@@ -70,8 +71,28 @@ public class LoginApplication implements CommandLineRunner {
 									logger.info("Ingrese contraseña");
 									String password = sc.next();
 									user1 = new User(null, name, password);
+									System.out.println(userService.validarUser(user1));
+									break;
+								}
+
+								case 3: {
+									logger.info("Ingrese nombre de usuario");
+									String name = sc.next();
+									logger.info("Ingrese contraseña");
+									String password = sc.next();
+									user1 = new User(null, name, password);
 									userService.crearUser(user1);
 								}
+
+								case 4: {
+									logger.info("Ingrese nombre de usuario");
+									String name = sc.next();
+									logger.info("Ingrese contraseña");
+									String password = sc.next();
+									user1 = new User(null, name, password);
+									userService.eliminarUser(user1);
+								}
+
 							}
 						}
 						break;
